@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cafecito Cancún</title>
+  <meta name="description" content="Cafecito, cafetería de especialidad en Cancún: matcha, pumpkin spice latte, frappés, panadería artesanal y ciabattas. Menú, horario y ubicación.">
+  <meta name="theme-color" content="#f7f0e4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Figtree:wght@400;500;600&display=swap">
+  
+  <!-- Estilos externos -->
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Cafecito",
+    "servesCuisine": "Café de especialidad, panadería, sándwiches",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Carlos Castillo Peraza, Supermanzana 523, Manzana 19 Lote 1-03, Quetzales",
+      "addressLocality": "Cancún",
+      "addressRegion": "Quintana Roo",
+      "postalCode": "77536",
+      "addressCountry": "MX"
+    },
+    "hasMap": "https://maps.app.goo.gl/5S8ya9KbZEgZxLoK7",
+    "sameAs": ["https://www.instagram.com/cafecito.cun"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "06:30",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Cafecito, ir al inicio">
+      <img src="img/cafecito-logo-blanco.png" alt="Cafecito Logo">
+      <span>Cafecito</span>
+    </a>
+    <nav aria-label="Secciones">
+      <a href="#menu">Menú</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="contenido">
+  <div class="hero" id="inicio">
+    <div>
+      <div class="status" id="status" role="status">
+        <span class="dot"></span>
+        <span id="statusText">Revisando horario…</span>
+      </div>
+      <h1>Café de especialidad, <em>hecho con calma</em> en Cancún</h1>
+      <p class="lead">Matcha, pumpkin spice latte y frappés, panadería artesanal y ciabattas recién armadas. Un lugar luminoso para trabajar un rato o platicar con alguien.</p>
+      <div class="actions">
+        <a class="btn primary" href="#menu">Ver el menú</a>
+        <a class="btn" href="https://maps.app.goo.gl/5S8ya9KbZEgZxLoK7" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="sleeve" id="heroArt" role="img" aria-label="Logo de Cafecito">
+      <img src="img/cafecito-logo-blanco.png" alt="Cafecito Logo Blanco">
+    </div>
+  </div>
+
+  <section id="menu" aria-labelledby="h-menu">
+    <div class="sec-head">
+      <p class="eyebrow">Carta</p>
+      <h2 id="h-menu">Menú</h2>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Categorías del menú" id="tabs"></div>
+    <div class="items" id="items" role="tabpanel"></div>
+    <p class="note" id="menuNote"></p>
+  </section>
+
+  <section id="galeria" aria-labelledby="h-gal">
+    <div class="sec-head">
+      <p class="eyebrow">El lugar y lo que servimos</p>
+      <h2 id="h-gal">Galería</h2>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <section id="contacto" aria-labelledby="h-con">
+    <div class="sec-head">
+      <p class="eyebrow">Visítanos</p>
+      <h2 id="h-con">Contacto y ubicación</h2>
+    </div>
+    <div class="contact">
+      <div class="card">
+        <h3>Dónde estamos</h3>
+        <address class="addr" id="addr">Av. Carlos Castillo Peraza, Supermanzana 523, Manzana 19 Lote 1-03, Quetzales, 77536 Cancún, Q.R.</address>
+        <div class="links">
+          <a class="btn primary" href="https://maps.app.goo.gl/5S8ya9KbZEgZxLoK7" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <button class="btn" type="button" id="copyAddr">Copiar dirección</button>
+        </div>
+        <p class="toast" id="toast" role="status"></p>
+      </div>
+      <div class="card">
+        <h3>Horario</h3>
+        <table class="hours" id="hours">
+          <caption class="eyebrow" style="text-align:left;display:none">Horario de atención</caption>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="mapcard">
+        <svg class="grid" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 200 100">
+          <g stroke="currentColor" stroke-width="1" fill="none">
+            <path d="M0 30h200M0 62h200M0 88h200M40 0v100M96 0v100M150 0v100"/>
+            <path d="M0 100L200 20" stroke-width="2"/>
+          </g>
+        </svg>
+        <div>
+          <p class="eyebrow" style="color:var(--ink)">Ubicación</p>
+          <h3>Av. Carlos Castillo Peraza</h3>
+          <p style="margin:6px 0 0">Quetzales, Cancún</p>
+        </div>
+        <div>
+          <a class="btn" href="https://maps.app.goo.gl/5S8ya9KbZEgZxLoK7" target="_blank" rel="noopener">Ver el mapa</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Escríbenos y síguenos</h3>
+        <p style="margin:0 0 16px;color:var(--muted)">Para dudas, pedidos o ver las novedades del día.</p>
+        <div class="links">
+          <a class="btn primary" id="waBtn" href="#" target="_blank" rel="noopener">Escríbenos</a>
+          <a class="btn" href="https://www.instagram.com/cafecito.cun" target="_blank" rel="noopener">Instagram @cafecito.cun</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© Cafecito · Cancún, Quintana Roo | jaqly labs</span>
+  <a href="https://www.instagram.com/cafecito.cun" target="_blank" rel="noopener">@cafecito.cun</a>
+</footer>
+
+<div class="dock" aria-label="Acciones rápidas">
+  <a class="btn" href="https://maps.app.goo.gl/5S8ya9KbZEgZxLoK7" target="_blank" rel="noopener">Cómo llegar</a>
+  <a class="btn primary" id="waDock" href="#" target="_blank" rel="noopener">Escríbenos</a>
+</div>
+
+<!-- Script externo -->
+<script src="script.js"></script>
+</body>
+</html>
