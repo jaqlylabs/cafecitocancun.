@@ -1,22 +1,22 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
-  --bg: #f7f0e4;          /* crema */
-  --surface: #fffaf2;
-  --fg: #2a1d16;          /* tinta */
-  --muted: #6f594d;
-  --line: #e3d3bb;
-  --accent: #a85a20;      /* caramelo tostado */
-  --accent-fg: #fffaf2;
-  --kraft: #c9996a;       /* cartón del vaso */
-  --ink: #2a1d16;         /* tinta fija sobre kraft */
-  --matcha: #68763a;
-  --good: #2f6b3b;
-  --bad: #a1402b;
-  --tile-a: #efdcc0; 
-  --tile-b: #d6ab7a;
+  --bg: #1d1410;          /* Fondo principal oscuro */
+  --surface: #2a1d17;     /* Superficie de tarjetas */
+  --fg: #f4e8d6;          /* Texto claro */
+  --muted: #c4ab9a;       /* Texto secundario */
+  --line: #45322b;        /* Líneas y bordes */
+  --accent: #e39b5c;      /* Acento cálido */
+  --accent-fg: #1d1410;
+  --kraft: #5a3d2d;       
+  --ink: #f4e8d6;         
+  --matcha: #a9b872;
+  --good: #7fc08a;
+  --bad: #e58a74;
+  --tile-a: #3d2b22; 
+  --tile-b: #5a3d2d;
   --font-display: "Montserrat", "Segoe UI", system-ui, sans-serif;
   --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
 }
@@ -115,13 +115,13 @@ h2 {
   margin: 0 0 8px;
 }
 
-/* Encabezado */
+/* Encabezado y barra de navegación optimizados para móvil */
 header.top {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
   z-index: 5;
   margin-inline: -16px;
-  padding: 8px 16px;
+  padding: 10px 16px;
   background: color-mix(in srgb, var(--bg) 94%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
@@ -131,25 +131,25 @@ header.top .wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 1.05rem;
-  letter-spacing: .24em;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   min-height: 44px;
 }
 
 .brand img {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   flex: none;
 }
@@ -157,23 +157,40 @@ header.top .wrap {
 nav {
   display: flex;
   gap: 2px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
 }
 
 nav a {
   text-decoration: none;
   font-weight: 600;
-  font-size: .92rem;
-  padding: 0 12px;
-  min-height: 44px;
+  font-size: 0.85rem;
+  padding: 0 8px;
+  min-height: 40px;
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
+  white-space: nowrap;
 }
 
 nav a:hover {
   background: var(--surface);
+}
+
+/* Ajuste para pantallas un poco más grandes */
+@media (min-width: 480px) {
+  .brand {
+    font-size: 1.05rem;
+    letter-spacing: .24em;
+  }
+  .brand img {
+    width: 36px;
+    height: 36px;
+  }
+  nav a {
+    font-size: .92rem;
+    padding: 0 12px;
+  }
 }
 
 /* Inicio / Hero */
